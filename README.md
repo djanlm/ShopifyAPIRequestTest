@@ -68,5 +68,5 @@ axios.post(urlFulfillments, {
 
 ## Run the code
 
-Run the script using the command *node src/index.js*
+Run the script using the command `node src/index.js`
  
