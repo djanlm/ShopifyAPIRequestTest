@@ -10,31 +10,21 @@ To open and run this project you will need:
 
 
 ## Setting up your store
-To rece
-## Getting Started
-
-* Create or choose a folder where you gonna clone the project.
-* Clone the repository with the command `git clone https://github.com/djanlm/ShopifyAPIRequestTest`.
-* Run `npm install` to install all dependencies.
-
-
-Configure your own .env file. In the repository there's an .env.example that can be used as a model.
-In the .env file you should insert your API password and the name of your store. 
 
 The REST Admin APIs require a Shopify access token or an API password for making authenticated requests.
 Following the next steps you can get a password to authenticate using basic HTTP authentication
 1.	From your Shopify admin, click Apps.
 
 2.	Click Manage private apps.
-![ManagePrivateApps](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/ManagePrivateApps.jpg)
+![ManagePrivateApps](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/img/ManagePrivateApps.jpg)
 
 3. Enable Private App Development.
 
-![EnableAppDevelopment](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/EnablePrivateAppDevelopment.jpg)
+![EnableAppDevelopment](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/img/EnablePrivateAppDevelopment.jpg)
 
 4.	Click Create a new private app.
 
-![CreatePrivateAPP](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/CreatePrivateAPP.jpg)
+![CreatePrivateAPP](https://github.com/djanlm/ShopifyAPIRequestTest/blob/master/img/CreatePrivateAPP.jpg)
 
 5.	Enter the details for your private app.
 
@@ -42,6 +32,13 @@ Following the next steps you can get a password to authenticate using basic HTTP
 
 7.	Use the generated API password as the access token. Add it in the .env file
 
+8.  Allow access changing the dropdown menu from "no access" to "read and write" to the following Admin API permissions:
+* Inventory
+* Merchant-managed fulfillment orders
+* Order editing
+* Orders
+
+### Extra info
 
 REST Admin API endpoints are organized by resource. We'll need to use different API endpoints depending on the service we want to provide. In this case we gonna use the Order resource.
 
@@ -51,3 +48,25 @@ The order resource details with all the data it returns can be found [here](http
 
 
 
+# Getting Started
+
+* Create or choose a folder where you gonna clone the project.
+* Clone the repository with the command `git clone https://github.com/djanlm/ShopifyAPIRequestTest`.
+* Run `npm install` to install all dependencies.
+
+
+Configure your own .env file. In the repository there's an .env.example that can be used as a model.
+In the .env file you should insert your API password and the name of your store. 
+
+Inside the post request, change the *location_id* if it is needed because it must be specified when creating fulfillments.
+
+```javascript
+axios.post(urlFulfillments, {
+      fulfillment: { location_id: 64622035101 }
+    }
+```
+
+## Run the code
+
+Run the script using the command *node src/index.js*
+ 
