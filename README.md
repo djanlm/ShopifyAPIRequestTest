@@ -55,7 +55,7 @@ The order resource details with all the data it returns can be found [here](http
 * Run `npm install` to install all dependencies.
 
 
-Configure your own .env file. In the repository there's an .env.example that can be used as a model.
+* Create and configure your own .env file. In the repository there's an .env.example that can be used as a model.
 In the .env file you should insert your API password and the name of your store. 
 
 Inside the post request, change the *location_id* if it is needed because it must be specified when creating fulfillments.
